@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Умная механика</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/media.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header" id="header">
+        <h1 class="header-title">Умная механика</h1>
+        <p class="header-subtitle">образовательный центр</p>
+        <a href="#portfolio" class="header-arrow">
+            <img src="./img/header/chevron-down.svg" alt="Arrow">
+        </a>
+    </header>
+
+   
+
+    <main>
+        <section class="portfolio" id="portfolio">
+            <div class="container">
+                <h2 class="portfolio-header">О НАС</h2>
+				<h3 align="center"> Предлагаем широкий спектр курсов, разработанных ведущими экспертами в различных областях знаний. </h3>
+                
+                <!-- portfolio-cards-wrapper -->
+                <div class="portfolio-cards-wrapper">
+
+                    <!-- Card -->
+                    <div class="card">
+                        <a href="robo.html" class="card-link">
+                            <img class="card-img" src="./img/portfolio/kurs.gif" alt="Многостраничный сайт">
+                            <h3 class="card-title">Робототехника</h3>
+                            <p></p>
+                        </a>
+                    </div>
+                    <!-- // Card -->
+
+                    <!-- Card -->
+                    <div class="card">
+                        <a href="web.html" class="card-link">
+                            <img class="card-img" src="./img/portfolio/kurs12.gif" alt="Многостраничный сайт">
+                            <h3 class="card-title">Веб-дизайн</h3>
+                            <p></p>
+                        </a>
+                    </div>
+                    <!-- // Card -->
+
+                    <!-- Card -->
+                    <div class="card">
+                        <a href="prog.html" class="card-link">
+                            <img class="card-img" src="./img/portfolio/kurs123.gif" alt="Многостраничный сайт">
+                            <h3 class="card-title">Программирование</h3>
+                            <p></p>
+                        </a>
+                    </div>
+                    <!-- // Card -->
+
+                    <!-- Card -->
+                    <div class="card">
+                        <a href="contact.html" class="card-link">
+                            <img class="card-img" src="./img/portfolio/lr.gif" alt="Многостраничный сайт">
+                            <h3 class="card-title">Контакты</h3>
+                            <p></p>
+                        </a>
+                    </div>
+                    <!-- // Card -->
+
+                </div>
+                <!-- // portfolio-cards-wrapper -->
+    
+            </div>
+        </section>
+    </main>
+
+    <div class="marquee">
+        <p>Создавай будущее с нами! Учись робототехнике и воплощай идеи в жизнь!</p>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-row">
+                
+                <!-- footer-copyright -->
+                <div class="footer-copyright footer-col">
+                    <div class="footer-copyright-name">© Умная механика</div>
+                    <p>Образовательный центр</p>
+                </div>
+                <!-- // footer-copyright -->
+                
+                <!-- footer-icons -->
+                <div class="footer-icons footer-col">
+                    <p>Наши социальные сети:</p>
+                    <div class="footer-icons-row">
+                        <a href="#">
+                            <img src="./img/icons/instagram.svg" alt="">
+                        </a>
+                        <a href="#">
+                            <img src="./img/icons/facebook.svg" alt="">
+                        </a>
+                        <a href="#">
+                            <img src="./img/icons/vk.svg" alt="">
+                        </a>
+                        <a href="#">
+                            <img src="./img/icons/linkedin.svg" alt="">
+                        </a>
+                        <a href="#">
+                            <img src="./img/icons/github.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+                <!-- // footer-icons -->
+
+                <div class="footer-contacts footer-col">
+                    <a href="" class="footer-button">
+                        Связаться Вконтакте
+                    </a>
+                    <p>Возникли вопросы? Пишите!</p>
+                </div>
+
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Библиотеки и плагины -->
+    <script src="./libs/jquery/jquery-3.5.1.min.js"></script>
+    <script src="./libs/vide/jquery.vide.min.js"></script>
+
+    <!-- Собственные скрипты и вызовы библиотек -->
+    <script src="./js/main.js"></script>
+	
+	<script>
+        // Сохраняем позицию прокрутки при загрузке страницы
+        window.onload = function() {
+            sessionStorage.setItem('scrollPos', window.scrollY);
+        };
+
+        // Восстанавливаем позицию прокрутки при возврате на страницу
+        window.onpageshow = function(event) {
+            if (event.persisted) {
+                var scrollPos = sessionStorage.getItem('scrollPos');
+                if (scrollPos) {
+                    window.scrollTo(0, scrollPos);
+                }
+            }
+        };
+    </script>
+
+</body>
+</html>

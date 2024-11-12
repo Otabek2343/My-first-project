@@ -1,0 +1,121 @@
+
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ИсторияКомпании</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/media.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main>
+        <article class="project">
+            <div class="container">
+                <h1 class="project-header">ТОВАРЫ</h1>
+                <div class="project-img">
+                    <img src="./img/projects/history.jpg" alt="ИсторияКомпании">
+                </div>
+                <div class="project-description">
+                    <p>ТОВАРЫ</p>
+                    <p>Адрес сайта: <a href="#">site.com</a></p>
+                </div>
+                <a href="index.html" class="project-btn-back">← ВЕРНУТЬСЯ НА ГЛАВНУЮ</a>
+            </div>
+        </article>
+    </main>
+
+
+
+
+
+    <ul>
+        <?php
+        // Подключение к базе данных
+        $servername = "localhost";
+        $username = "ваше_имя_пользователя";
+        $password = "ваш_пароль";
+        $dbname = "имя_базы_данных";
+
+        $conn = new mysqli($servername, $username, $password, $dbname);
+
+        // Проверка подключения
+        if ($conn->connect_error) {
+            die("Ошибка подключения: " . $conn->connect_error);
+        }
+
+        // Выполнение запроса к базе данных
+        $sql = "SELECT * FROM products";
+        $result = $conn->query($sql);
+
+        // Обработка результатов запроса
+        if ($result->num_rows > 0) {
+            // Вывод данных в виде списка
+            while ($row = $result->fetch_assoc()) {
+                echo "<li>" . $row["name"] . " - Цена: $" . $row["price"] . " - Наличие: " . $row["quantity"] . "</li>";
+            }
+        } else {
+            echo "Нет данных";
+        }
+
+        // Закрытие соединения с базой данных
+        $conn->close();
+        ?>
+    </ul>
+
+
+
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-row">
+                
+                <!-- footer-copyright -->
+                <div class="footer-copyright footer-col">
+                    <div class="footer-copyright-name">© ФармацевтПРО</div>
+                    <p>Нужные лекарства в нужный момент</p>
+                </div>
+                <!-- // footer-copyright -->
+                
+                <!-- footer-icons -->
+                <div class="footer-icons footer-col">
+                    <p>Наши социальные сети:</p>
+                    <div class="footer-icons-row">
+                        <a href="#">
+                            <img src="./img/icons/instagram.svg" alt="">
+                        </a>
+                        <a href="#">
+                            <img src="./img/icons/facebook.svg" alt="">
+                        </a>
+                        <a href="#">
+                            <img src="./img/icons/vk.svg" alt="">
+                        </a>
+                        <a href="#">
+                            <img src="./img/icons/linkedin.svg" alt="">
+                        </a>
+                        <a href="#">
+                            <img src="./img/icons/github.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+                <!-- // footer-icons -->
+
+                <div class="footer-contacts footer-col">
+                    <a href="https://vk.me/rightblogru" class="footer-button">
+                        Связаться Вконтакте
+                    </a>
+                    <p>Возникли вопросы? Пишите!</p>
+                </div>
+
+
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
